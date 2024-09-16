@@ -15,7 +15,9 @@
 ├── package.json
 ├── src
 │   ├── styles.css
+│   ├── main.js
 └── └── index.html
+└── └── index.test.js
 ```
 
 ## Development

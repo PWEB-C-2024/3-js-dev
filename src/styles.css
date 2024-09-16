@@ -1,252 +1,260 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* General body styling */
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    row-gap: 24px;
-    color: #333;
-    line-height: 1.5;
-  }
-  
-  /* Header */
-  h1 {
-    color: #333;
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-  }
-  
-  h2 {
-    font-size: 28px;
-    color: #555;
-    font-weight: bold;
-  }
-  
-  h4 {
-    font-size: 18px;
-    color: #555;
-    text-align: center;
-    margin-bottom: 8px;
-  }
-  
-  h5 {
-    font-size: 22px;
-    color: #333;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  p {
-    font-size: 16px;
-    color: #666;
-  }
-  
-  .container__nrp {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Current Activity Section Styling */
-  .container__current_activity {
-    display: flex;
-    flex-direction: column;
-    row-gap: 24px;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General body styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Header */
+h1 {
+  color: #333;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 28px;
+  color: #555;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+h5 {
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+  margin: 0;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+}
+
+.container__nrp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Current Activity Section Styling */
+.container__current_activity {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  gap: 16px;
+}
+
+ul li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Activity Info Styling */
+ul li div.activity-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+ul li div.activity-info h5 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+ul li div.activity-info p {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+ul li div.activity-info .target-time {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Buttons Section Styling */
+ul li div.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Button styling */
+button {
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Stop Button (Red) */
+button.stop {
+  background-color: #e74c3c;
+  color: white;
+}
+
+button.stop:hover {
+  background-color: #c0392b;
+}
+
+/* Start Button (Green) */
+button.start {
+  background-color: #2ecc71;
+  color: white;
+}
+
+button.start:hover {
+  background-color: #27ae60;
+}
+
+/* Past Activity Section */
+.container__past_activity {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+td {
+  background-color: #fff;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Table border */
+table {
+  border: 1px solid #ddd;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
   ul {
-    list-style-type: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    width: 100%;
-    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  
-  ul li {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 16px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 32px;
   }
-  
-  /* Activity Info Styling */
-  ul li div.activity-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-  }
-  
-  ul li div.activity-info h5 {
+
+  h2 {
     font-size: 24px;
-    margin: 0;
   }
-  
-  ul li div.activity-info p {
-    font-size: 20px;
-    margin: 0;
-  }
-  
-  /* Buttons Section Styling */
-  ul li div.buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-  }
-  
-  /* Button styling */
-  button {
-    padding: 10px 16px;
-    border-radius: 5px;
-    cursor: pointer;
+
+  h4 {
     font-size: 16px;
-    border: none;
-    transition: background-color 0.3s ease;
   }
-  
-  button:hover {
-    opacity: 0.9;
+
+  ul li div.activity-info h5 {
+    font-size: 20px;
   }
-  
-  /* Stop Button (Red) */
-  button.stop {
-    background-color: #e74c3c;
-    color: white;
-  }
-  
-  button.stop:hover {
-    background-color: #c0392b;
-  }
-  
-  /* Start Button (Green) */
-  button.start {
-    background-color: #2ecc71;
-    color: white;
-  }
-  
-  button.start:hover {
-    background-color: #27ae60;
-  }
-  
-  /* Past Activity Section */
-  .container__past_activity {
-    display: flex;
-    flex-direction: column;
-    row-gap: 16px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  th,
-  td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-  }
-  
-  th {
-    background-color: #4caf50;
-    color: white;
+
+  ul li div.activity-info p {
     font-size: 18px;
-    font-weight: bold;
   }
-  
-  td {
-    background-color: #fff;
+
+  table,
+  ul li {
+    font-size: 16px;
   }
-  
-  tbody tr:hover {
-    background-color: #f1f1f1;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 10px;
   }
-  
-  /* Table border */
-  table {
-    border: 1px solid #ddd;
+
+  ul {
+    grid-template-columns: 1fr;
   }
-  
-  /* Responsive Design */
-  @media screen and (max-width: 900px) {
-    ul {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  
-    h1 {
-      font-size: 32px;
-    }
-  
-    h2 {
-      font-size: 24px;
-    }
-  
-    h4 {
-      font-size: 16px;
-    }
-  
-    ul li div.activity-info h5 {
-      font-size: 20px;
-    }
-  
-    ul li div.activity-info p {
-      font-size: 18px;
-    }
-  
-    table,
-    ul li {
-      font-size: 16px;
-    }
+
+  h1 {
+    font-size: 28px;
   }
-  
-  @media screen and (max-width: 600px) {
-    body {
-      padding: 10px;
-    }
-  
-    ul {
-      grid-template-columns: 1fr;
-    }
-  
-    h1 {
-      font-size: 28px;
-    }
-  
-    h2,
-    h4 {
-      font-size: 20px;
-    }
-  
-    ul li div.activity-info h5 {
-      font-size: 18px;
-    }
-  
-    ul li div.activity-info p {
-      font-size: 16px;
-    }
-  
-    button {
-      padding: 8px 12px;
-      font-size: 14px;
-    }
-  
-    table,
-    ul li {
-      font-size: 14px;
-    }
+
+  h2,
+  h4 {
+    font-size: 20px;
   }
+
+  ul li div.activity-info h5 {
+    font-size: 18px;
+  }
+
+  ul li div.activity-info p {
+    font-size: 16px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  table,
+  ul li {
+    font-size: 14px;
+  }
+}
