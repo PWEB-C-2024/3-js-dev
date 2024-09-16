@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity Tracker App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Productivity Tracker App</h1>
+    <div class="container__nrp">
+      <h4>Nama: John Doe</h4>
+      <h4>NRP: 5025221001</h4>
+    </div>
+    <div class="container__current_activity">
+      <div class="container__header__current_activity">
+        <h2>Current Activity</h2>
+        <p>List of activities that's on progress</p>
+      </div>
+      <ul>
+        <li>
+          <div class="activity-info" data-activity="1">
+            <span>Activity 1</span>
+            <p id="currentTime-1">00:00.00</p>
+            <div class="buttons">
+              <button class="stop" data-activity="1">Stop</button>
+              <button class="start" data-activity="1">Start</button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="activity-info" data-activity="2">
+            <span>Activity 2</span>
+            <p id="currentTime-2">00:00.00</p>
+            <div class="buttons">
+              <button class="stop" data-activity="2">Stop</button>
+              <button class="start" data-activity="2">Start</button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="activity-info" data-activity="3">
+            <span>Activity 3</span>
+            <p id="currentTime-3">00:00.00</p>
+            <div class="buttons">
+              <button class="stop" data-activity="3">Stop</button>
+              <button class="start" data-activity="3">Start</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="container__past_activity">
+      <div class="container__header__past_activity">
+        <h2>Past Activity</h2>
+        <p>List of activities that have been done</p>
+      </div>
+      <table border="1" id="activityTable">
+        <thead>
+          <tr>
+            <th data-sort="activity">Activity</th>
+            <th data-sort="time">Time Tracked</th>
+            <th data-sort="performance">Performance</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

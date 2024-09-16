@@ -1,0 +1,25 @@
+{
+  "name": "3-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve src",
+    "test": "jest"
+  },
+  "author": "Teaching Assistant PWEB C 2024",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^25.0.0",
+    "regenerator-runtime": "^0.14.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.5.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "serve": "^14.2.3"
+  }
+}
