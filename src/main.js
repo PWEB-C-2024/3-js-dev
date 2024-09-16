@@ -32,11 +32,16 @@ function stopTimer(activityid) {
         timeelapsed[activityid] = Date.now() - start[activityid];
         delete timers[activityid];
 
-        // Save activity
+        // Get the target time from the DOM
+        const targetTimeStr = document.querySelector(`.activity-info[data-activity="${activityid}"] .target-time`).textContent.replace('Target time: ', '');
+        const targetTimeMs = parseTargetTime(targetTimeStr);
+
+        // Calculate performance based on actual and target times
         const timetaken = formatTime(timeelapsed[activityid]);
-        const performance = calculatePerformance(timeelapsed[activityid]);
-        saveActivity(`Activity ${activityid}`, timetaken, performance);
-        storeActivity(activityid, timetaken, performance);
+        const performance = calculatePerformance(timeelapsed[activityid], targetTimeMs);
+
+        saveActivity(`Activity ${activityid}`, targetTimeStr, timetaken, performance);
+        storeActivity(activityid, targetTimeStr, timetaken, performance);
 
         timeelapsed[activityid] = 0; // Reset for the next activity
         document.getElementById(`currentTime-${activityid}`).textContent = "00:00.00";
@@ -59,23 +64,28 @@ function formatTime(ms) {
 }
 
 // Calculate performance based on time taken
-function calculatePerformance(ms) {
-    const time = ms / 1000;
-    const performance = Math.max(0, 100 - time * 0.5); // Performance decreases as time increases
+function calculatePerformance(ms, target) {
+    const performance = (target / ms * 100);
     return `${Math.round(performance)}%`;
 }
 
+function parseTargetTime(targetTimeStr) {
+    const [minutes, seconds] = targetTimeStr.split(':');
+    const [secs, millisecs] = seconds.split('.');
+    return (parseInt(minutes) * 60 * 1000) + (parseInt(secs) * 1000) + (parseInt(millisecs) || 0);
+}
+
 // Save activity to the table
-function saveActivity(activity, time, performance) {
+function saveActivity(activity, target, time, performance) {
     const row = document.createElement('tr');
-    row.innerHTML = `<td>${activity}</td><td>${time}</td><td>${performance}</td>`;
+    row.innerHTML = `<td>${activity}</td><td>${target}</td><td>${time}</td><td>${performance}</td>`;
     document.querySelector('#activityTable tbody').appendChild(row);
 }
 
 // Persist activity data in localStorage
-function storeActivity(activityid, time, performance) {
+function storeActivity(activityid, target, time, performance) {
     const activityData = JSON.parse(localStorage.getItem('activities')) || [];
-    activityData.push({ activityid, activity: `Activity ${activityid}`, time, performance });
+    activityData.push({ activityid, activity: `Activity ${activityid}`, target, time, performance });
     localStorage.setItem('activities', JSON.stringify(activityData));
 }
 

@@ -16,7 +16,7 @@
 ├── src
 │   ├── styles.css
 │   ├── main.js
-└── └── index.html
+│   ├── index.html
 └── └── index.test.js
 ```
 
